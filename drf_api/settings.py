@@ -85,7 +85,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
-    'corsheaders'
+    'corsheaders',
 
     'profiles',
     'posts',
@@ -93,6 +93,7 @@ INSTALLED_APPS = [
     'likes',
     'followers',
 ]
+
 SITE_ID = 1
 
 MIDDLEWARE = [
