@@ -61,8 +61,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', os.environ.get('ALLOWED_HOST')]
 
-CORS_ALLOW_CREDENTIALS = True
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -102,6 +100,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+   origin for origin in [
+     os.environ.get('CLIENT_ORIGIN'),
+     os.environ.get('CLIENT_ORIGIN_DEV')
+   ] if origin
+ ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'drf_api.urls'
 
